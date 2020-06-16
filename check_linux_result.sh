@@ -80,16 +80,36 @@ grep 'TMOUT=300s' /etc/profile || echo -e "${Fail}/etc/profile未设置TMOUT"
 ################################
 subject_title 身份鉴别3
 item_title "是否安装telnet"
-rpm -qa | grep telnet > /dev/null || echo -e "${Pass}未安装telnet"
+rpm -qa | grep telnet > /dev/null 
+if [[ $? == 0 ]]; then
+    echo -e "${Fail}已安装telnet"
+else
+    echo -e "${Pass}未安装telnet"
+fi
 
 item_title "是否启用telnet"
-ss -tlunp | grep :23 > /dev/null || echo -e "${Pass}未启用telnet" && echo -e "${Fail}已启用telnet"
+ss -tlunp | grep :23 > /dev/null
+if [[ $? == 0 ]]; then
+    echo -e "${Fail}已启用telnet"
+else
+    echo -e "${Pass}未启用telnet"
+fi
 
 item_title "是否已安装openssh"
-rpm -qa | grep openssh > /dev/null || echo -e "${Fail}未安装Openssh" && echo -e "${Pass}已安装Openssh"
+rpm -qa | grep openssh > /dev/null
+if [[ $? == 0 ]]; then
+    echo -e "${Pass}已安装Openssh"
+else
+    echo -e "${Fail}未安装Openssh"
+fi
 
 item_title "是否已启动sshd"
-ss -tlunp | grep :22 > /dev/null || echo -e "${Fail}未启用telnet" && echo -e "${Pass}已启用SSHD"
+ss -tlunp | grep :22 > /dev/null
+if [[ $? == 0 ]]; then
+    echo -e "${Pass}已启用SSHD"
+else
+    echo -e "${Fail}未启用SSHD"
+fi
 ################################
 subject_title 身份鉴别4
 item_title "访谈"
