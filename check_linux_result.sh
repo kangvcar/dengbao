@@ -5,7 +5,7 @@ export PATH
 echo "
 #=================================================
 #	System Required: CentOS 7+
-#	Description: 等保2.0现场测评取证记录脚本
+#	Description: 等保2.0现场测评脚本
 #	Version: 1.0
 #	Author: 何康健
 #	Email: kangvcar@gmail.com
