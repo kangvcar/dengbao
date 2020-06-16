@@ -2,6 +2,9 @@
 PATH=/bin:/sbin:/usr/bin:/usr/sbin:/usr/local/bin:/usr/local/sbin:~/bin
 export PATH
 
+Green_font_prefix="\033[32m" && Red_font_prefix="\033[31m" && Red_background_prefix="\033[41;37m" && Green_background_prefix="\033[42;37m" && Red_background_prefix="\033[41;37m" && Font_color_suffix="\033[0m"
+Error="${Red_font_prefix}[错误]${Font_color_suffix}"
+
 echo "
 #=================================================
 #	System Required: CentOS 7+
@@ -9,13 +12,11 @@ echo "
 #	Version: 1.0
 #	Author: kangvcar
 #	Email: kangvcar@gmail.com
-#   ExecTime: `date "+%Y/%m/%d %H:%M:%S"`
+#       ExecTime: `date "+%Y/%m/%d %H:%M:%S"`
 #=================================================
 ==================== Starting ====================
 "
 
-Green_font_prefix="\033[32m" && Red_font_prefix="\033[31m" && Red_background_prefix="\033[41;37m" && Green_background_prefix="\033[42;37m" && Red_background_prefix="\033[41;37m" && Font_color_suffix="\033[0m"
-Error="${Red_font_prefix}[错误]${Font_color_suffix}"
 
 check_root(){
 	[[ $EUID != 0 ]] && echo -e "${Error} 当前账号非ROOT(或没有ROOT权限)，无法继续操作，请获取ROOT权限。" && exit 1
@@ -166,8 +167,8 @@ cat /etc/rsyslog.conf
 item_title "sudo auditctl -l"
 sudo auditctl -l
 
-item_title "ausearch -f /etc/passwd"
-ausearch -f /etc/passwd
+item_title "ausearch -f /etc/passwd"
+ausearch -f /etc/passwd
 ################################
 subject_title 安全审计13
 item_title "ausearch-ts today"
@@ -238,8 +239,8 @@ ps -ef | grep sshd
 
 ################################
 subject_title 数据完整性25
-item_title "/etc/passw"
-cat /etc/passw
+item_title "/etc/passwd"
+cat /etc/passwd
 
 item_title "/etc/shadow"
 cat /etc/shadow
