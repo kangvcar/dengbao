@@ -113,8 +113,8 @@ ls -l /etc/passwd
 item_title "ls -l /etc/shadow"
 ls -l /etc/shadow
 
-item_title "ls -l /etc//etc/group"
-ls -l /etc//etc/group
+item_title "ls -l /etc/etc/group"
+ls -l /etc/etc/group
 
 item_title "ls -l /etc/crontab"
 ls -l /etc/crontab
