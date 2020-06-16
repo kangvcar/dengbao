@@ -9,7 +9,7 @@ echo "
 #	Version: 1.0
 #	Author: 何康健
 #	Email: kangvcar@gmail.com
-#   ExecTime: `date "+%Y/%m/%d %H:%M:%S"`
+#       ExecTime: `date "+%Y/%m/%d %H:%M:%S"`
 #=================================================
 ==================== Starting ====================
 "
